@@ -1,0 +1,37 @@
+# Compiled Frontend-code #
+**/Private_ScrumHero/Assets/css
+**/Private_ScrumHero/Assets/js
+
+# Frontend #
+.sass-cache
+*.orig
+# frontend scaffold
+**/Sources/node_modules
+**/Sources/sass/_font-icon-settings.scss
+**/Assets/fonts/icon-font
+**/Assets/javascripts/main.js
+**/Assets/stylesheets/
+
+# Ignore Visual Studio temporary files and build results #
+[Bb]in/
+[Oo]bj/
+*.suo
+*.user
+
+#############
+## Windows ##
+#############
+
+# Windows image file caches #
+Thumbs.db
+# Folder config file #
+Desktop.ini
+# Recycle Bin used on file shares #
+$RECYCLE.BIN/
+
+##########
+## OS X ##
+##########
+
+# Desktop Services Store #
+.DS_Store
