@@ -1,0 +1,35 @@
+﻿@model Private_ScrumHero.ViewModels.DeveloperTaskViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DeveloperTask</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeveloperTaskName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeveloperTaskName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DeveloperTaskId }) |
+    @Html.ActionLink("Back to List", "Details", "UserStories", new { id = Model.UserStoryId }, null)
+</p>

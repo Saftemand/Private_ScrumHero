@@ -1,0 +1,39 @@
+﻿@using Private_ScrumHero.Services
+@using Private_ScrumHero.ViewModels
+@model Private_ScrumHero.ViewModels.BacklogViewModel
+
+@{
+    ViewBag.Title = "Backlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </th>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.ProjectName) |
+            @Html.ActionLink("Create New User Story", "Create", "UserStories", new {Model.BacklogId}, null)
+        </td>
+    </tr>
+    
+        @foreach (UserStoryViewModel userStory in Model.userStories)
+        {
+            <tr>
+                <td>@userStory.Name -> @userStory.UserStoryId</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "UserStories", new { id = userStory.UserStoryId }, null) |
+                    @Html.ActionLink("Details", "Details", "UserStories", new { id = userStory.UserStoryId }, null) |
+                    @Html.ActionLink("Delete", "Delete", "UserStories", new { id = userStory.UserStoryId }, null)
+                </td>
+            </tr>
+        }
+        
+</table>
+
+

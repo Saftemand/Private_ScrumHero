@@ -1,0 +1,72 @@
+﻿@using Private_ScrumHero.ViewModels
+@model Private_ScrumHero.ViewModels.UserStoryViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UserStory</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LocalId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocalId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastModifiedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastModifiedAt)
+        </dd>
+    </dl>
+    <table>
+        <tr>
+            <th>Tasks</th>
+            
+        </tr>
+        @foreach (DeveloperTaskViewModel developerTask in Model.DeveloperTasks)
+        {
+            <tr>
+                <td>
+                    @developerTask.LocalId : @developerTask.DeveloperTaskName
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", "DeveloperTasks", new { id = developerTask.DeveloperTaskId }, null) |
+                    @Html.ActionLink("Edit", "Edit", "DeveloperTasks", new { id = developerTask.DeveloperTaskId }, null) |
+                    @Html.ActionLink("Delete", "Delete", "DeveloperTasks", new { id = developerTask.DeveloperTaskId }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<br/>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserStoryId }) |
+    @Html.ActionLink("Back to List", "Index", "Backlogs", new { Model.BacklogId }, null) |
+    @Html.ActionLink("Create New Task", "Create", "DeveloperTasks", new { Model.UserStoryId }, null)
+</p>
